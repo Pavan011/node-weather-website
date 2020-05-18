@@ -11,6 +11,8 @@ const geocode = require('./utils/geocode')
 
 //setup static directory to serve
 const app = express()
+
+const port = process.env.PORT || 3000
 app.use(express.static(publicDirectoryPath))
 hbs.registerPartials(partialpaths)
 
@@ -94,6 +96,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('Server is up in port 3000')
+app.listen(port, () => {
+    console.log('Server is up in port'+port)
 })
